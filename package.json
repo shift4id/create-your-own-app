@@ -1,0 +1,35 @@
+{
+  "name": "create-your-own-app",
+  "title": "create-your-own-app",
+  "version": "1.0.0",
+  "description": "Siddharth Adusumelli's portfolio website built with React",
+  "keywords": [],
+  "homepage": "https://github.com/shift4id/create-your-own-app#readme",
+  "bugs": {
+    "url": "https://github.com/shift4id/create-your-own-app/issues",
+    "email": "hi@sid.fyi"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Siddharth Adusumelli",
+    "email": "hi@sid.fyi",
+    "url": "https://sid.fyi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/github:shift4id/create-your-own-app"
+  },
+  "target": "web",
+  "private": false,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
