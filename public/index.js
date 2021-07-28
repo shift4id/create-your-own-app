@@ -9,7 +9,7 @@ function setup() {
   background(0);
   colorMode(HSB, 360, 100, 100);
 
-  socket = io.connect("http://localhost:3000");
+  socket = io.connect("https://google-cssi-cyoa.herokuapp.com/");
 
   socket.on("art", data => art = data);
   socket.on("data", data => art.push(data));
