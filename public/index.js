@@ -51,8 +51,8 @@ function mouseDragged() {
 
 function keyPressed() {
   if (keyCode === BACKSPACE) socket.emit("clear");
-  if (keyCode === UP_ARROW) hue = (hue + 10) % 360;
-  if (keyCode === DOWN_ARROW) hue = (hue - 10) % 360;
+  if (keyCode === UP_ARROW) hue = min(hue + 10, 360);
+  if (keyCode === DOWN_ARROW) hue = max(hue - 10, 0);
   if (keyCode === 84) theme = theme.name === "light" ? dark : light;
 }
 
