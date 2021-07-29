@@ -20,11 +20,15 @@ function draw() {
   background(theme.bg);
 
   noFill();
-  strokeWeight(3);
 
   art.forEach(data => {
-    if (data.isEraser) stroke(theme.bg);
-    else stroke(data.hue, theme.sat, theme.bright);
+    if (data.isEraser) {
+      stroke(theme.bg);
+      strokeWeight(6);
+    } else {
+      stroke(data.hue, theme.sat, theme.bright);
+      strokeWeight(3);
+    }
     line(data.x1, data.y1, data.x2, data.y2);
   });
 
