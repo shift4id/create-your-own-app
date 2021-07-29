@@ -1,4 +1,4 @@
-let art = [], hue = 0, socket, theme, userCount = 0;
+let art = [], hue = 0, isEraser, socket, theme, userCount = 0;
 
 const dark = { name: "dark", bg: "black", fg: "white", sat: 100, bright: 100 }; 
 const light = { name: "light", bg: "white", fg: "black", sat: 100, bright: 70 }; 
@@ -54,9 +54,10 @@ function keyPressed() {
   if (keyCode === UP_ARROW) hue = min(hue + 10, 360);
   if (keyCode === DOWN_ARROW) hue = max(hue - 10, 0);
   if (keyCode === 84) theme = theme.name === "light" ? dark : light;
+  if (keyCode === 69) isEraser = true;
 }
 
 function sendData(x1, y1, x2, y2) {
-  const data = { hue, x1, y1, x2, y2 };
+  const data = { hue: isEraser ? theme.bg : hue, x1, y1, x2, y2 };
   socket.emit("art", data);
 }
