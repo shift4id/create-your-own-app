@@ -23,7 +23,7 @@ function draw() {
   strokeWeight(3);
 
   art.forEach(data => {
-    if (isEraser) stroke(theme.bg);
+    if (data.isEraser) stroke(theme.bg);
     else stroke(data.hue, theme.sat, theme.bright);
     line(data.x1, data.y1, data.x2, data.y2);
   });
