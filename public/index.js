@@ -23,7 +23,8 @@ function draw() {
   strokeWeight(3);
 
   art.forEach(data => {
-    stroke(data.hue, theme.sat, theme.bright);
+    if (isEraser) stroke(theme.bg);
+    else stroke(data.hue, theme.sat, theme.bright);
     line(data.x1, data.y1, data.x2, data.y2);
   });
 
@@ -59,6 +60,6 @@ function keyPressed() {
 }
 
 function sendData(x1, y1, x2, y2) {
-  const data = { hue: isEraser ? theme.bg : hue, x1, y1, x2, y2 };
+  const data = { hue, isEraser, x1, y1, x2, y2 };
   socket.emit("art", data);
 }
