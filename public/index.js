@@ -36,6 +36,7 @@ function draw() {
   text("Use the up and down arrow keys to change hue", 20, 35);
   text("Press backspace to clear the canvas", 20, 50);
   text("Press t to change theme", 20, 65);
+  text("Press e to toggle eraser", 20, 80);
   textAlign(RIGHT);
   fill(hue, theme.sat, theme.bright);
   text(`Hue: ${hue}`, width - 20, 20);
@@ -54,7 +55,7 @@ function keyPressed() {
   if (keyCode === UP_ARROW) hue = min(hue + 10, 360);
   if (keyCode === DOWN_ARROW) hue = max(hue - 10, 0);
   if (keyCode === 84) theme = theme.name === "light" ? dark : light;
-  if (keyCode === 69) isEraser = true;
+  if (keyCode === 69) isEraser = !isEraser;
 }
 
 function sendData(x1, y1, x2, y2) {
